@@ -46,6 +46,15 @@
         <implements interface=".interfaces.IGallery" />
     </class>
 
+    <class class="plone.app.contenttypes.content.Folder"
+           zcml:condition="installed plone.app.contenttypes">
+        <implements interface=".interfaces.IGallery" />
+    </class>
+    <class class="plone.app.contenttypes.content.Collection"
+           zcml:condition="installed plone.app.contenttypes">
+        <implements interface=".interfaces.IGallery" />
+    </class>
+
     <utility
         provides="zope.schema.interfaces.IVocabularyFactory"
         component=".vocabularies.GalleryTypeVocabulary"
